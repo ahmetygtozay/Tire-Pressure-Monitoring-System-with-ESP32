@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "ahmet yiğit",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -19.2, "left": -71.96, "attrs": {} },
+    {
+      "type": "wokwi-hx711",
+      "id": "cell1",
+      "top": -64.6,
+      "left": 89,
+      "attrs": { "type": "50kg" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -51.6, "left": -121, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -112.8,
+      "left": -55.8,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.2", "cell1:GND", "black", [ "v0" ] ],
+    [ "esp:3V3", "cell1:VCC", "red", [ "h0" ] ],
+    [ "cell1:SCK", "esp:5", "gold", [ "h0" ] ],
+    [ "cell1:DT", "esp:4", "magenta", [ "h0" ] ],
+    [ "led1:C", "esp:GND.2", "blue", [ "v0" ] ],
+    [ "led1:A", "esp:12", "green", [ "v0" ] ],
+    [ "bz1:2", "esp:13", "green", [ "v0" ] ],
+    [ "bz1:1", "esp:GND.2", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

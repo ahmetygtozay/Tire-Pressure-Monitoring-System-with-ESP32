@@ -1,0 +1,7 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+HX711
+LiquidCrystal I2C
+Adafruit SSD1306
+Adafruit GFX Library
